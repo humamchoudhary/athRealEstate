@@ -1,118 +1,168 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+import Avatar from "@/components/Avatar";
+import Template from "@/components/Template";
+import Image from "next/image";
+import { getCleintsData, getStatsData, getFilterData } from "../lib/ReadData";
+import SearchBar from "@/components/SearchBar";
+import Link from "next/link";
+export default function Home({ cleintsData, statsData, filterData }) {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <Template>
+      <div className="flex  relative items-center justify-center w-full h-[85vh] rounded-3xl overflow-hidden">
+        <div className=" absolute z-20  flex flex-col  justify-center items-center text-center gap-8">
+          <p className=" font-semibold text-white text-6xl basis-1/2">
+            Start Your Dream Home Journey
+          </p>
+          <SearchBar filterData={filterData} />
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
+        <div className="w-full h-full absolute bg-gray-700 z-10 opacity-50"></div>
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/bg2.jpg"
+          alt="header"
+          fill
+          style={{ objectFit: "cover", zIndex: 1 }}
         />
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+      <div
+        className="lg:px-24 w-full mt-16 mb-8 flex flex-col gap-16"
+        id="about"
+      >
+        <div className=" flex flex-col lg:flex-row justify-between w-full lg:text-start text-center gap-4 ">
+          <p className=" font-semibold text-5xl basis-1/2">
+            Your Trusted Real Estate Consultants
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          <p className="  font-light text-xl basis-2/5">
+            Minim culpa culpa culpa amet ex nulla sint ipsum sint officia
+            adipisicing. Exercitation adipisicing ipsum aliquip amet culpa do
+            Lorem minim et enim velit magna consectetur. Duis culpa pariatur
+            dolore officia aliquip. Ex ea exercitation sint excepteur. Sint nisi
+            mollit proident laborum eiusmod magna et ad aliquip. Voluptate
+            aliquip in fugiat esse ut adipisicing non non.
           </p>
-        </a>
+        </div>
+        <div className="flex flex-col lg:flex-row gap-5 h-max">
+          <div className="grid lg:w-1/2 lg:grid-cols-2 grid-cols-1 gap-3 ">
+            <div className="flex flex-col justify-between lg:h-48 p-8 bg-gray-50 rounded-md">
+              <p className="font-black text-3xl">{statsData.cities}</p>
+              <p className=" font-light text-lg">Citites</p>
+            </div>
+            <div className="flex flex-col justify-between lg:h-48 p-8 bg-gray-200 rounded-md">
+              <p className="font-black text-3xl">{statsData.experince}</p>
+              <p className=" font-light text-lg">Years Of Experince </p>
+            </div>
+            <div className="flex flex-col justify-between lg:h-48 p-8 bg-gray-100 rounded-md">
+              <p className="font-black text-3xl">{statsData.sales}</p>
+              <p className=" font-light text-lg">Properties Sold</p>
+            </div>
+            <div className="flex flex-col justify-between lg:h-48 p-8 bg-black rounded-md">
+              <p className="font-black text-3xl text-white">
+                {statsData.cleints}
+              </p>
+              <p className=" font-light text-lg text-white">
+                Satisfied customers
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col-reverse lg:flex-row  w-full  lg:w-1/2 bg-gray-200 p-8 rounded-md gap-5">
+            <div className="flex flex-col gap-4 basis-3/5 justify-between ">
+              <p className=" ">
+                Adipisicing laborum magna et occaecat et laborum enim ipsum. Sit
+                mollit voluptate eu amet duis laborum sunt dolor velit Lorem.
+                Magna voluptate sit sunt ipsum. Deserunt eiusmod do occaecat ex
+                pariatur eu consectetur cillum.
+              </p>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
+              <Link
+                href={"#contact"}
+                className="font-medium text-sm cursor-pointer btn-cta text-white px-5 py-3"
+              >
+                Contact Us
+              </Link>
+            </div>
+            <div className="  rounded-md overflow-hidden bg-gray-900"></div>
+            <div className="relative lg:basis-1/3 h-96  rounded-md overflow-hidden bg-gray-400">
+              <Image
+                src="/building.jpg"
+                alt="building"
+                fill
+                style={{
+                  objectFit: "cover",
+                  zIndex: 1,
+                }}
+              />
+            </div>
+          </div>
+        </div>
+        <div className=" flex flex-col lg:flex-row justify-between w-full lg:text-start text-center gap-4">
+          <p className=" font-semibold text-5xl basis-1/2">
+            Real Estate Without the Hassle
           </p>
-        </a>
+          <p className="  font-light text-xl basis-2/5">
+            Minim culpa culpa culpa amet ex nulla sint ipsum sint officia
+            adipisicing. Exercitation adipisicing ipsum aliquip amet culpa do
+            Lorem minim et enim velit magna consectetur. Duis culpa pariatur
+            dolore officia aliquip. Ex ea exercitation sint excepteur. Sint nisi
+            mollit proident laborum eiusmod magna et ad aliquip. Voluptate
+            aliquip in fugiat esse ut adipisicing non non.
+          </p>
+        </div>
+        <div className=" flex flex-col  items-center w-full">
+          <div className="flex flex-col justify-center items-center text-center gap-4">
+            <h1 className=" font-semibold text-5xl">
+              Dont Trust Us, Trust Their Voice
+            </h1>
+            <p className="font-medium text-lg w-2/3 ">
+              Discover our valued cleints, Whom we helped and they left with joy
+              and embark on the quest of their dream house or perfect profit
+              Properties
+            </p>
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 mt-10">
+            {cleintsData &&
+              cleintsData.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`${
+                      index === 0 || index === 3
+                        ? "col-span-2 bg-gray-50"
+                        : "col-span-1 bg-gray-100"
+                    } flex flex-row  justify-between  py-3 `}
+                  >
+                    <div className="w-[95%] h-80 py-4 px-10">
+                      <Avatar src={item.image} style="ml-16 " />
+                      <p className="w-[90%] font-medium text-xl mt-4 line-clamp-3">
+                        {item.message}
+                      </p>
+                      <p className="w-2/3 font-semibold text-xl mt-4">
+                        {item.name}
+                      </p>
+                    </div>
+                    <div className="flex mr-4 items-end">
+                      <div className=" relative h-20 w-20 opacity-20 bottom-0">
+                        <Image
+                          src="/quote.png"
+                          alt="header"
+                          objectFit="cover"
+                          layout="fill"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
       </div>
-    </main>
-  )
+    </Template>
+  );
+}
+export async function getStaticProps() {
+  const cleintsData = await getCleintsData();
+  const statsData = await getStatsData();
+  const filterData = await getFilterData();
+
+  return {
+    props: { cleintsData, statsData, filterData },
+  };
 }
