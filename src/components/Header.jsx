@@ -1,10 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 function Header() {
   return (
     <div className="flex justify-between w-full flex-row items-center  mb-5">
-      <div className=" font-black text-xl">LOGO</div>
+      <Link href={"/"} className=" relative w-16 h-16 p-2 font-black text-xl">
+        <Image
+          src={"/logo.png"}
+          alt="header"
+          fill
+          style={{ objectFit: "contain", zIndex: 1 }}
+        />
+      </Link>
       <div className="flex gap-6 flex-row items-center">
         <Link
           href={"#about"}
