@@ -39,7 +39,7 @@ function DetailsPage({ listingData }) {
                 <AiOutlineFileSearch size={20} color="black" /> {data.fileno}
               </p>
             </div>
-            <div className=" invert">
+            <div className=" invert lg:w-2/3 overflow-hidden">
               <Contact fileno={data.fileno} />
             </div>
             <div className=" my-16 flex flex-row gap-8">

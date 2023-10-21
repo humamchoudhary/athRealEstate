@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 function Contact({ fileno }) {
   const [email, setEmail] = useState();
+  const [message, setMessage] = useState();
   async function SubmitEmail(e) {
     e.preventDefault();
     try {
@@ -19,7 +20,7 @@ function Contact({ fileno }) {
         "template_oa9z9kc",
         {
           from_email: email,
-          fileno: fileno && fileno,
+          message: fileno ? `file No: ${fileno}` : `Message ${message}`,
         },
         "3m5zvAEoGBZRSR7sJ"
       );
@@ -30,6 +31,7 @@ function Contact({ fileno }) {
         type: "success",
       });
       setEmail("");
+      setMessage("");
     } catch (error) {
       console.log(error);
       toast("We couldnot process the request please try again!", {
@@ -42,7 +44,9 @@ function Contact({ fileno }) {
   return (
     <div>
       <form
-        className=" items-center flex  border w-min border-white rounded-md px-4 py-2"
+        className={`items-center grid gap-4 justify-center ${
+          fileno ? " lg:grid-cols-3 grid-cols-1" : " gap-5 grid-cols-1  "
+        } border  border-white rounded-md px-4 py-2  lg:min-w-[300px] min-w-full `}
         onSubmit={SubmitEmail}
       >
         <input
@@ -52,12 +56,24 @@ function Contact({ fileno }) {
           }}
           placeholder="Email"
           type="email"
-          className=" bg-transparent ring-0 outline-none text-white font-medium text-lg lg:w-72 w-32"
+          className=" bg-transparent ring-0 outline-none text-white font-medium text-lg col-span-2 "
           required
         />
+        {!fileno && (
+          <input
+            value={message}
+            onChange={({ target }) => {
+              setMessage(target.value);
+            }}
+            placeholder="Message"
+            type="text"
+            className=" bg-transparent ring-0 outline-none text-white font-medium text-lg col-span-2 "
+            required
+          />
+        )}
         <button
           type="submit"
-          className="text-black bg-white px-4 py-2 rounded-lg flex flex-row items-center gap-3 border border-black duration-300  hover:invert"
+          className="text-black mx-auto bg-white px-4 py-2 rounded-lg flex w-min flex-row items-center gap-3 border border-black duration-300  hover:invert"
         >
           Submit
           <div className="w-8 h-8 relative">

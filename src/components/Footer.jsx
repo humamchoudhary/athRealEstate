@@ -24,7 +24,7 @@ function Footer() {
       <div className="flex flex-col lg:flex-row gap-4 justify-between lg:items-center px-4">
         <div>
           <div className=" font-black text-4xl text-white">LOGO</div>
-          <p className="text-md text-white w-80">
+          <p className="text-md text-white lg:w-80">
             Cupidatat incididunt esse amet consequat amet et consectetur commodo
             velit laboris enim do. Nisi qui sint qui culpa pariatur.
           </p>
