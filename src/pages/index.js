@@ -7,8 +7,8 @@ import Link from "next/link";
 export default function Home({ cleintsData, statsData, filterData }) {
   return (
     <Template>
-      <div className="flex  relative items-center justify-center w-full h-[100vh] lg:h-[85vh] rounded-3xl overflow-hidden">
-        <div className=" absolute z-20  flex flex-col  justify-center items-center text-center gap-8">
+      <div className="flex  relative items-center justify-center w-full lg:min-h-[85vh] rounded-3xl overflow-hidden py-8">
+        <div className="  z-20  flex flex-col  justify-center items-center text-center gap-8 mt-8">
           <p className=" font-semibold text-white text-6xl basis-1/2">
             Start Your Dream Home Journey
           </p>
@@ -19,7 +19,7 @@ export default function Home({ cleintsData, statsData, filterData }) {
           src="/bg2.jpg"
           alt="header"
           fill
-          style={{ objectFit: "cover", zIndex: 1 }}
+          style={{ objectFit: "cover", zIndex: 1, marginBottom: "2rem" }}
         />
       </div>
       <div
