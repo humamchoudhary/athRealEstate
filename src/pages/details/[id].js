@@ -50,7 +50,7 @@ function DetailsPage({ listingData }) {
                 <BiBath size={24} color="black" /> {data.rooms} Bathrooms(s)
               </div>
             </div>
-            <p>{data.desc}</p>
+            <p className=" text-justify">{data.desc}</p>
           </div>
           <div className="grid grid-cols-2 gap-4 sticky top-10  w-full h-full">
             <div className=" col-span-2 relative w-full h-80 overflow-hidden rounded-xl">
