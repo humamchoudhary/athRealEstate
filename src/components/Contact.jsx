@@ -20,7 +20,8 @@ function Contact({ fileno }) {
         "template_oa9z9kc",
         {
           from_email: email,
-          message: fileno ? `file No: ${fileno}` : `Message ${message}`,
+          message: `Message ${message}`,
+          fileno: `file No: ${fileno}`,
         },
         "3m5zvAEoGBZRSR7sJ"
       );
@@ -44,9 +45,7 @@ function Contact({ fileno }) {
   return (
     <div>
       <form
-        className={`items-center grid gap-4 justify-center ${
-          fileno ? " lg:grid-cols-3 grid-cols-1" : " gap-5 grid-cols-1  "
-        } border  border-white rounded-md px-4 py-2  lg:min-w-[300px] min-w-full `}
+        className={`items-center grid justify-center  gap-5 grid-cols-1  } border  border-white rounded-md px-4 py-2  lg:min-w-[300px] min-w-full `}
         onSubmit={SubmitEmail}
       >
         <input
@@ -59,18 +58,16 @@ function Contact({ fileno }) {
           className=" bg-transparent ring-0 outline-none text-white font-medium text-lg col-span-2 "
           required
         />
-        {!fileno && (
-          <input
-            value={message}
-            onChange={({ target }) => {
-              setMessage(target.value);
-            }}
-            placeholder="Message"
-            type="text"
-            className=" bg-transparent ring-0 outline-none text-white font-medium text-lg col-span-2 "
-            required
-          />
-        )}
+        <input
+          value={message}
+          onChange={({ target }) => {
+            setMessage(target.value);
+          }}
+          placeholder="Message"
+          type="text"
+          className=" bg-transparent ring-0 outline-none text-white font-medium text-lg col-span-2 "
+          required
+        />
         <button
           type="submit"
           className="text-black mx-auto bg-white px-4 py-2 rounded-lg flex w-min flex-row items-center gap-3 border border-black duration-300  hover:invert"
