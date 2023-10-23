@@ -15,7 +15,6 @@ function FilterDW({
   filters,
   active,
 }) {
-  const [openDropdown, setOpenDropdown] = useState(false);
   const [selectedKeys, setSelectedKeys] = React.useState(
     new Set([active ? active : "none"])
   );
@@ -34,17 +33,9 @@ function FilterDW({
   );
 
   return (
-    <Dropdown isOpen={openDropdown}>
+    <Dropdown>
       <DropdownTrigger className="flex flex-col px-6 py-4   basis-2/5 h-full lg:items-start items-center ">
-        <Button
-          variant="light"
-          onMouseEnter={() => {
-            setOpenDropdown(true);
-          }}
-          onMouseLeave={() => {
-            setOpenDropdown(false);
-          }}
-        >
+        <Button variant="light">
           <p className="font-bold text-md">{label}</p>
           <p
             className={`font-light text-sm ${
