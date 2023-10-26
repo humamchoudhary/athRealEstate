@@ -8,13 +8,7 @@ function Contact({ fileno }) {
   async function SubmitEmail(e) {
     e.preventDefault();
     try {
-      // const res = await fetch("/api/contact", {
-      //   method: "POST",
-      //   body: JSON.stringify({
-      //     email: email,
-      //     fileno: fileno,
-      //   }),
-      // });
+     
       const resp = await emailjs.send(
         "service_ab115xi",
         "template_oa9z9kc",
@@ -25,7 +19,7 @@ function Contact({ fileno }) {
         },
         "3m5zvAEoGBZRSR7sJ"
       );
-      console.log(resp);
+    
       toast("We have recived your request. We will contact you soon", {
         //   hideProgressBar: true,
         autoClose: 2000,
@@ -34,7 +28,7 @@ function Contact({ fileno }) {
       setEmail("");
       setMessage("");
     } catch (error) {
-      console.log(error);
+ 
       toast("We couldnot process the request please try again!", {
         //   hideProgressBar: true,
         autoClose: 2000,

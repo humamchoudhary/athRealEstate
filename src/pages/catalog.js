@@ -45,12 +45,10 @@ function catelog({ listings, filterData }) {
                 )))
         );
       });
-      console.log(filterData);
       setData(filteredData);
     }
   }, [filters]);
 
-  console.log(filters);
   return (
     <Template>
       <div className=" min-h-screen">

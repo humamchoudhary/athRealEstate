@@ -33,8 +33,27 @@ export async function getFilterData() {
   // Read the json file
   const jsonData = await fsPromises.readFile(filePath);
   // Parse data as json
-  const objectData = JSON.parse(jsonData)["filters"];
-  return objectData;
+  const listings = JSON.parse(jsonData)["listing"];
+  const getUniqueValues = (data, key) => {
+    return [...new Set(data.map((item) => item[key]))];
+  };
+
+  // Generate filters object
+  const filters = {
+    location: getUniqueValues(listings, "postal").map((city) => ({
+      key: city,
+    })),
+    size: getUniqueValues(listings, "size_range").map((size) => ({
+      key: size,
+    })),
+    range: getUniqueValues(listings, "price_range").map((price) => ({
+      key: price,
+    })),
+    type: getUniqueValues(listings, "type").map((type) => ({ key: type })),
+    doa: getUniqueValues(listings, "doa").map((doa) => ({ key: doa })),
+  };
+
+  return filters;
 }
 
 export async function getListingData() {

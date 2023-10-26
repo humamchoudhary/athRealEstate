@@ -1,5 +1,6 @@
 import React from "react";
 import Contact from "./Contact";
+import Link from "next/link";
 function Footer() {
   return (
     <div
@@ -25,22 +26,15 @@ function Footer() {
         <div>
           <div className=" font-black text-4xl text-white">LOGO</div>
           <p className="text-md text-white lg:w-80">
-            Cupidatat incididunt esse amet consequat amet et consectetur commodo
-            velit laboris enim do. Nisi qui sint qui culpa pariatur.
+            Start Your Dream Home Journey With Us With Out Any Hassle
           </p>
         </div>
         <div className="grid grid-cols-3 items-center gap-5">
           <div className="flex flex-col gap-2 text-white">
             <p className="font-bold">Home</p>
-            <p>About Us</p>
-            <p>Contact Us</p>
-            <p>Properties</p>
-          </div>
-          <div className="flex flex-col gap-2 text-white">
-            <p className="font-bold">Social</p>
-            <p>Instagram</p>
-            <p>Facebook</p>
-            <p>Twitter</p>
+            <Link href={"/#about"}>About Us</Link>
+            <Link href={"/#contact"}>Contact Us</Link>
+            <Link href={"/catalog"}>Properties</Link>
           </div>
         </div>
       </div>

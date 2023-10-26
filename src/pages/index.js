@@ -26,17 +26,17 @@ export default function Home({ cleintsData, statsData, filterData }) {
         className="lg:px-24 w-full mt-16 mb-8 flex flex-col gap-16"
         id="about"
       >
-        <div className=" flex flex-col lg:flex-row justify-between w-full lg:text-start text-center gap-4 ">
+        <div className=" flex flex-col lg:flex-row items-center justify-between w-full lg:text-start text-center gap-4 ">
           <p className=" font-semibold text-5xl basis-1/2">
             Your Trusted Real Estate Consultants
           </p>
           <p className="  font-light text-xl basis-2/5">
-            Minim culpa culpa culpa amet ex nulla sint ipsum sint officia
-            adipisicing. Exercitation adipisicing ipsum aliquip amet culpa do
-            Lorem minim et enim velit magna consectetur. Duis culpa pariatur
-            dolore officia aliquip. Ex ea exercitation sint excepteur. Sint nisi
-            mollit proident laborum eiusmod magna et ad aliquip. Voluptate
-            aliquip in fugiat esse ut adipisicing non non.
+            We are a team of academic and professional real estate consultants
+            specializing in a wide range of services, offering expert guidance
+            to our clients in Germany. Our expertise covers both auctions and
+            direct sales, providing valuable insights and support throughout
+            property transactions. With a commitment to excellence, we are your
+            trusted partners in making informed real estate decisions.
           </p>
         </div>
         <div className="flex flex-col lg:flex-row gap-5 h-max">
@@ -64,11 +64,20 @@ export default function Home({ cleintsData, statsData, filterData }) {
           </div>
           <div className="flex flex-col-reverse lg:flex-row  w-full  lg:w-1/2 bg-gray-200 p-8 rounded-md gap-5">
             <div className="flex flex-col gap-4 basis-3/5 justify-between ">
-              <p className=" ">
-                Adipisicing laborum magna et occaecat et laborum enim ipsum. Sit
-                mollit voluptate eu amet duis laborum sunt dolor velit Lorem.
-                Magna voluptate sit sunt ipsum. Deserunt eiusmod do occaecat ex
-                pariatur eu consectetur cillum.
+              <p>
+                <span className="font-bold">
+                  Our Mission: Client Peace of Mind
+                </span>
+                <br />
+                <br />
+                At ATH Real Estate Consultants, our mission is to provide peace
+                of mind to clients during real estate transactions. Our
+                experienced team guides you every step of the way, tailoring
+                personalized service to your needs. Whether you're a first-time
+                buyer or seasoned investor, our consultative approach focuses on
+                understanding your goals, educating you on the process, and
+                efficiently handling details. We are dedicated to giving our
+                clients a stress-free, rewarding real estate experience.
               </p>
 
               <Link
@@ -92,17 +101,22 @@ export default function Home({ cleintsData, statsData, filterData }) {
             </div>
           </div>
         </div>
-        <div className=" flex flex-col lg:flex-row justify-between w-full lg:text-start text-center gap-4">
+        <div className=" flex flex-col items-center lg:flex-row justify-between w-full lg:text-start text-center gap-4">
           <p className=" font-semibold text-5xl basis-1/2">
             Real Estate Without the Hassle
           </p>
           <p className="  font-light text-xl basis-2/5">
-            Minim culpa culpa culpa amet ex nulla sint ipsum sint officia
-            adipisicing. Exercitation adipisicing ipsum aliquip amet culpa do
-            Lorem minim et enim velit magna consectetur. Duis culpa pariatur
-            dolore officia aliquip. Ex ea exercitation sint excepteur. Sint nisi
-            mollit proident laborum eiusmod magna et ad aliquip. Voluptate
-            aliquip in fugiat esse ut adipisicing non non.
+            For over three years, we have been the foremost foreclosure
+            information service, offering comprehensive nationwide data
+            research. Our expertise ensures that our customers never miss out on
+            auction opportunities. We provide all auction dates and pertinent
+            details for various property types, including houses, apartment
+            buildings, apartments, land, and commercial and agricultural
+            properties. Please note that we do not verify the accuracy of the
+            data or any provided reports, and we are not liable for any
+            inaccuracies or prior sales. Additionally, there is no energy
+            certificate requirement for properties acquired through foreclosure
+            auctions.
           </p>
         </div>
         <div className=" flex flex-col  items-center w-full">
@@ -131,7 +145,7 @@ export default function Home({ cleintsData, statsData, filterData }) {
                   >
                     <div className="w-[95%] h-80 py-4 px-10">
                       <Avatar src={item.image} style="ml-16 " />
-                      <p className="w-[90%] font-medium text-xl mt-4 line-clamp-3">
+                      <p className="w-[90%] font-medium text-xl mt-4 line-clamp-4">
                         {item.message}
                       </p>
                       <p className="w-2/3 font-semibold text-xl mt-4">
