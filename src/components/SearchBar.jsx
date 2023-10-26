@@ -5,10 +5,9 @@ import Link from "next/link";
 
 export default function SearchBar({ filterData, selectedData }) {
   const [filters, setFilters] = useState(new Map());
- 
 
   return (
-    <div className="flex flex-col w-min px-10  shadow-lg  lg:flex-row bg-white lg:h-20 mx-auto lg:mx-6 rounded-lg lg:items-start items-center ">
+    <div className="flex flex-col w-min pr-10  shadow-lg  lg:flex-row bg-white lg:h-20 mx-auto lg:mx-6 rounded-lg lg:items-start items-center ">
       <FilterDW
         setFilters={setFilters}
         filters={filters}
