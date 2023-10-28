@@ -131,7 +131,7 @@ export default function Home({ cleintsData, statsData, filterData }) {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 mt-10">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-10">
             {cleintsData &&
               cleintsData.map((item, index) => {
                 return (
@@ -139,8 +139,8 @@ export default function Home({ cleintsData, statsData, filterData }) {
                     key={index}
                     className={`${
                       index === 0 || index === 3
-                        ? "col-span-2 bg-gray-50"
-                        : "col-span-1 bg-gray-100"
+                        ? "lg:col-span-2 bg-gray-50"
+                        : "lg:col-span-1 bg-gray-100"
                     } flex flex-row  justify-between  py-3 `}
                   >
                     <div className="w-[95%] h-80 py-4 px-10">
