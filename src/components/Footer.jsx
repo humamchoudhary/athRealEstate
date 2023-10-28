@@ -1,6 +1,7 @@
 import React from "react";
 import Contact from "./Contact";
 import Link from "next/link";
+import Image from "next/image";
 function Footer() {
   return (
     <div
@@ -24,7 +25,18 @@ function Footer() {
 
       <div className="flex flex-col lg:flex-row gap-4 justify-between lg:items-center px-4">
         <div>
-          <div className=" font-black text-4xl text-white">LOGO</div>
+          <Link
+            href={"/"}
+            className="relative w-64 h-64 p-2 font-black text-xl"
+          >
+            <Image
+              src={"/logo.png"}
+              alt="header"
+              width={80}
+              height={80}
+              style={{ objectFit: "contain", zIndex: 1 }}
+            />
+          </Link>
           <p className="text-md text-white lg:w-80">
             Start Your Dream Home Journey With Us With Out Any Hassle
           </p>
@@ -33,7 +45,7 @@ function Footer() {
           <div className="flex flex-col gap-2 text-white">
             <p className="font-bold">Home</p>
             <Link href={"/#about"}>About Us</Link>
-            <Link href={"/#contact"}>Contact Us</Link>
+            <Link href={"#contact"}>Contact Us</Link>
             <Link href={"/catalog"}>Properties</Link>
           </div>
         </div>
