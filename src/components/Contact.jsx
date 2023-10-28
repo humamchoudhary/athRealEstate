@@ -8,10 +8,9 @@ function Contact({ fileno }) {
   async function SubmitEmail(e) {
     e.preventDefault();
     try {
-     
       const resp = await emailjs.send(
-        "service_ab115xi",
-        "template_oa9z9kc",
+        "service_01phbmg",
+        "template_ufyuyie",
         {
           from_email: email,
           message: `Message ${message}`,
@@ -19,7 +18,7 @@ function Contact({ fileno }) {
         },
         "3m5zvAEoGBZRSR7sJ"
       );
-    
+
       toast("We have recived your request. We will contact you soon", {
         //   hideProgressBar: true,
         autoClose: 2000,
@@ -28,7 +27,6 @@ function Contact({ fileno }) {
       setEmail("");
       setMessage("");
     } catch (error) {
- 
       toast("We couldnot process the request please try again!", {
         //   hideProgressBar: true,
         autoClose: 2000,
