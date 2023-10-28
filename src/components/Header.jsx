@@ -16,19 +16,19 @@ function Header() {
       <div className="flex gap-6 flex-row items-center">
         <Link
           href={"#about"}
-          className=" font-light text-sm lg:font-medium lg:text-lg cursor-pointer hover:underline underline-offset-8 duration-500"
+          className=" font-light text-sm lg:font-medium lg:text-lg overflow-hidden whitespace-nowrap cursor-pointer text- hover:underline underline-offset-8 duration-500"
         >
           About Us
         </Link>
         <Link
           href={"/catalog"}
-          className=" font-light text-sm lg:font-medium lg:text-lg cursor-pointer hover:underline underline-offset-8 duration-150"
+          className=" font-light text-sm lg:font-medium lg:text-lg overflow-hidden whitespace-nowrap cursor-pointer text- hover:underline underline-offset-8 duration-150"
         >
           Property
         </Link>
         <Link
           href={"#contact"}
-          className=" font-light text-sm lg:font-medium lg:text-lg cursor-pointer btn-cta text-white px-3 py-2"
+          className=" font-light text-sm lg:font-medium lg:text-lg overflow-hidden whitespace-nowrap cursor-pointer text- btn-cta text-white px-3 py-2"
         >
           Contact Us
         </Link>
