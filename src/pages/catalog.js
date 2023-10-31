@@ -31,11 +31,11 @@ function catelog({ listings, filterData }) {
                 parseInt(filters.size.split("km2")[1].replace("-", "")))) &&
           (!filters.range ||
             (filters.range.includes("+") &&
-              parseInt(filters.range.split("$")[0].replace("+", "")) <
-                parseInt(item.price.split("$")[1].split(",").join(""))) ||
-            (parseInt(item.price.split("$")[1].split(",").join("")) >=
-              parseInt(filters.range.split("$")[0].replace("-", "")) &&
-              parseInt(item.price.split("$")[1].split(",").join("")) <=
+              parseInt(filters.range.replace("€")[0].replace("+", "")) <
+                parseInt(item.price.replace("€")[1].replace(",", "").replace(".", ""))) ||
+            (parseInt(item.price.replace("€")[1].replace(",", "").replace(".", "")) >=
+              parseInt(filters.range.replace("€")[0].replace(",", "").replace(".", "")) &&
+              parseInt(item.price.replace("€")[1].replace(",", "").replace(".", "")) <=
                 parseInt(
                   filters.range
                     .split("$")[1]
